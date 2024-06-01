@@ -1,0 +1,21 @@
+query Publication($id: ObjectId!) {
+    publication(id: $id) {
+        preferences {
+            logo
+        }
+        id
+        title
+        author {
+            profilePicture
+            name
+            bio {
+                markdown
+                html
+            }
+        }
+        ogMetaData {
+            image
+        }
+        favicon
+    }
+}
