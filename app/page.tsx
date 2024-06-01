@@ -89,7 +89,7 @@ export default async function Home() {
             </div>
           </div> 
         </div>
-        <div className="emoji text-xl sm:text-2xl md:text-4xl my-10 text-center">🛌 🧑‍💻 🧘 🏃 🛀 🧑‍💻 🥣 🧑‍💻 🍻 🧑‍💻 🛌</div>
+        <div className="text-xl sm:text-2xl md:text-4xl my-10 text-center">🛌 🧑‍💻 🧘 🏃 🛀 🧑‍💻 🥣 🧑‍💻 🍻 🧑‍💻 🛌</div>
       </div>
     </main>
   );
