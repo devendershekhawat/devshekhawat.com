@@ -21,8 +21,8 @@ export const NAV_LINKS = [
         label: 'Blog',
     }
 ]
-const Navbar = ({ hide = false }: { hide: boolean }) => (
-    <nav className={`px-5 py-3 transition-all diration-300 opacity-${hide ? '0' : '1'}`}>
+const Navbar = () => (
+    <nav className={`px-5 py-3`}>
         <ul className="flex gap-x-4 text-sm">
             {NAV_LINKS.map(({ href, label }) => (
                 <li key={href}>
