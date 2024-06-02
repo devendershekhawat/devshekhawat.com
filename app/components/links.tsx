@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const SocialLink = ({ href, label, Icon, breakAt }: { href: string, label: string, Icon: React.ReactNode, breakAt: 'md' | 'lg' }) => (
     <Link
-      className={`flex flex-row gap-3 ${breakAt === 'lg' ? 'lg:text-sm' : 'md:text-sm' }`}
+      className={`flex flex-row gap-3 text-3xl md:text-sm lg:text-base`}
       href={href}
     >
       {Icon}
@@ -16,7 +16,7 @@ export const SocialLink = ({ href, label, Icon, breakAt }: { href: string, label
 )
 
 export const SocialLinks = ({ breakAt = 'md' }: { breakAt?: 'md' | 'lg' }) => (
-    <div className={`flex flex-row gap-3 mt-4 ${breakAt === 'lg' ? 'lg:flex-col' : 'md:flex-col' }`}>
+    <div className={`flex flex-row gap-5 mt-4 ${breakAt === 'lg' ? 'lg:flex-col' : 'md:flex-col' }`}>
         <SocialLink
             href="https://x.com/dev_is_a_dev"
             label='Twitter /@dev_is_a_dev'

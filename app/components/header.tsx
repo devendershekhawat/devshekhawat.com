@@ -15,27 +15,25 @@ const getPageTitle = (pathname: string) => {
 
 export default function Header() {
     return (
-        <header className={`z-10 border-b border-b-purple-500 w-full sticky top-0`}>
-            <div className="bg-gray-800/80">
-                <div className="max-w-[1024px] mx-auto px-6 py-4 flex justify-between items-center">
-                    <div className="w-[100px] h-[40px] md:hidden relative">
-                        <Image
-                            src="/logo.png"
-                            alt="Logo"
-                            fill
-                            className="object-contain"
-                        />    
-                    </div>
-                    <div className="w-[150px] h-[60px] hidden md:block relative">
-                        <Image
-                            src="/logo.png"
-                            alt="Logo"
-                            fill
-                            className="object-contain"
-                        />    
-                    </div>
-                    <Navbar />
+        <header className={`z-10 border-b border-b-purple-500 w-full sticky top-0 bg-slate-950`}>
+            <div className="max-w-[1024px] mx-auto px-6 py-4 flex justify-between items-center">
+                <div className="w-[100px] h-[40px] md:hidden relative">
+                    <Image
+                        src="/logo.png"
+                        alt="Logo"
+                        fill
+                        className="object-contain"
+                    />    
                 </div>
+                <div className="w-[150px] h-[60px] hidden md:block relative">
+                    <Image
+                        src="/logo.png"
+                        alt="Logo"
+                        fill
+                        className="object-contain"
+                    />    
+                </div>
+                <Navbar />
             </div>
         </header>
     )
