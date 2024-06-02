@@ -9,8 +9,8 @@ import { SocialLinks } from './components/links';
 
 export default async function Home() {
   return (
-    <main>
-      <div className="max-w-[1024px] mx-auto px-6 pt-4 md:pt-20">
+    <main className="min-h-screen bg-[url('/herobg.gif')] bg-fixed bg-no-repeat bg-center lg:py-10 bg-cover">
+      <div className="max-w-[1024px] mx-auto md:pt-20 bg-gray-800/80 px-6 py-4">
         <div className="grid grid-cols-6 gap-10">
           <div className="col-span-6 md:col-span-2">
             <div className="w-full h-96 relative rounded-md overflow-hidden">

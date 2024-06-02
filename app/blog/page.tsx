@@ -7,7 +7,8 @@ import Posts from "../components/posts";
 const BlogPage = async () => {
     const posts = await getPublicationPosts();
     return (
-        <main className="w-full max-w-[1024px] py-10 mx-auto px-6 min-h-screen">
+        <main className="w-full lg:py-10 min-h-screen bg-[url('/herobg.gif')] bg-fixed bg-no-repeat bg-center bg-cover">
+            <div className="w-full mx-auto max-w-[1024px] bg-gray-800/90 px-6 py-4">
             <h1 className="font-thin text-xl md:text-3xl mb-10">Blog</h1>
             <div className="flex flex-col-reverse lg:flex-row justify-between w-full gap-10 relative">
                 <div className="w-full">
@@ -20,6 +21,7 @@ const BlogPage = async () => {
                 </div>
             </div>
             <div className="mb-40 text-xl sm:text-2xl md:text-4xl mt-10 text-center">🛌 🧑‍💻 🧘 🏃 🛀 🧑‍💻 🥣 🧑‍💻 🍻 🧑‍💻 🛌</div>
+            </div>
         </main>
     )
 }
