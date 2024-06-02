@@ -19,7 +19,7 @@ const PostTile = ({ post }: { post: ArrayElement<Awaited<ReturnType<typeof getPu
                     />    
                 </div>
                 <div className="col-span-6 sm:col-span-6 md:col-span-7 lg:col-span-6">
-                    <h2 className="text-xl text-gray-300 mt-2">{post.title}</h2>
+                    <h2 className="text-xl group-hover:text-gray-50 text-gray-300 mt-2">{post.title}</h2>
                     <p className="text-gray-400 mt-2">{post.brief.substring(0, 100)}...</p>
                     <div className="mt-2 block">
                         {
