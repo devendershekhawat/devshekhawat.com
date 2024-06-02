@@ -1,0 +1,26 @@
+query PublicationPosts($id: ObjectId!) {
+    publication(id: $id) {
+    posts(first: 50) {
+      edges {
+        node {
+          id
+          url
+          title
+          coverImage {
+            url
+          }
+          brief
+          views
+          brief
+          subtitle
+          likedBy(first: 100) {
+            totalDocuments
+          }
+          comments(first: 100) {
+            totalDocuments
+          }
+        }
+      }
+    }
+  }
+}

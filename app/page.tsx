@@ -2,62 +2,31 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { getPublication } from './actions/getPublicationAction';
 import Header from './components/header';
+import { IoMail } from 'react-icons/io5';
 import Link from 'next/link';
 import { FaXTwitter, FaLinkedinIn, FaGithub, FaYoutube } from 'react-icons/fa6'
-
-const SocialLinks = ({ href, label, Icon }: { href: string, label: string, Icon: React.ReactNode }) => (
-    <Link
-      className="flex text-2xl md:text-sm  gap-4 items-center py-4 rounded-xl"
-      href={href}
-    >
-      {Icon}
-      <span className="hidden md:block">{label}</span>
-    </Link>
-)
+import { SocialLinks } from './components/links';
 
 export default async function Home() {
-  const publication = await getPublication();
   return (
     <main>
-      <Header logo={publication?.preferences.logo} />
       <div className="max-w-[1024px] mx-auto px-6 pt-4 md:pt-20">
         <div className="grid grid-cols-6 gap-10">
           <div className="col-span-6 md:col-span-2">
             <div className="w-full h-96 relative rounded-md overflow-hidden">
               <Image
                 src="https://cdn.hashnode.com/res/hashnode/image/upload/v1717257293349/vi2Pjxt_O.jpg?auto=format"
-                alt={publication?.author.name!}
+                alt="Dev Shekhawat"
                 fill
                 className="object-cover"
                 loading="eager"
                 layout="fill"
               />
             </div>
-            <div className="flex flex-row gap-3 text-xs mt-4 md:flex-col">
-              <SocialLinks
-                href="https://x.com/dev_is_a_dev"
-                label='Twitter /@dev_is_a_dev'
-                Icon={<FaXTwitter />}
-              />
-              <SocialLinks
-                href="https://x.com/dev_is_a_dev"
-                label='Connect on LinkedIn'
-                Icon={<FaLinkedinIn />}
-              />
-              <SocialLinks
-                href="https://github.com/devendershekhawat"
-                label='Check my Github'
-                Icon={<FaGithub />}
-              />
-              <SocialLinks
-                href="https://x.com/dev_is_a_dev"
-                label='My channel on YouTube'
-                Icon={<FaYoutube />}
-              />
-            </div>
+            <SocialLinks />
           </div>
           <div className="col-span-6 md:col-span-4">
-            <h1 className="text-3xl mb-2">Hello 👋🏼, I'm {publication?.author.name}</h1>
+            <h1 className="text-3xl mb-2">Hello 👋🏼, I'm Dev Shekhawat</h1>
             <h1 className="text-2xl">I build awesome stuff for web.</h1>
             <div className="text-gray-400 text-l [&>p]:my-4 leading-8">
               <p>
