@@ -1,10 +1,9 @@
 'use client';
 import Image from 'next/image';
 import { useWindowSize, useWindowScroll } from '@uidotdev/usehooks';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Navbar from './navbar';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const getPageTitle = (pathname: string) => {
     switch (pathname) {
@@ -21,10 +20,10 @@ export default function Header() {
     const { width } = useWindowSize();
     const pathname = usePathname();
     const [{ y: scrollY = 0 }] = useWindowScroll();
-    const ref = useRef<HTMLDivElement>(null);
+    const [ref, setRef] = useState<HTMLDivElement | null>(null);
 
     return (
-        <header className={`z-10 border-b border-b-purple-500 w-full bg-[url('/herobg.gif')] bg-no-repeat bg-center bg-cover sticky top-[-${ref.current?.offsetTop}px]`}>
+        <header className={`z-10 border-b border-b-purple-500 w-full bg-[url('/herobg.gif')] bg-no-repeat bg-center bg-cover sticky top-[-${ref?.offsetTop}px]`}>
             <div className="bg-gray-700/70">
                 <div className="max-w-[1024px] mx-auto px-6 py-4 flex justify-between items-center">
                     <div className="w-[100px] h-[40px] md:hidden relative">
@@ -43,7 +42,7 @@ export default function Header() {
                             className="object-contain"
                         />    
                     </div>
-                    <Navbar hide={scrollY! > ref.current?.offsetHeight!} />
+                    <Navbar hide={scrollY! > ref?.offsetHeight!} />
                 </div>
                 <div className="py-3 px-6 bg-purple-700/70 text-center text-sm">
                     🎉 I have launched a YouTube channel. Check it out{' '}
@@ -55,9 +54,9 @@ export default function Header() {
                         here
                     </a>.
                 </div>
-                <div ref={ref} className="max-w-[1024px] flex justify-between px-6 py-4 mx-auto">
+                <div ref={setRef} className="max-w-[1024px] flex justify-between px-6 py-4 mx-auto">
                     <h1 className="text-xl md:text-3xl">{getPageTitle(pathname)}</h1>
-                    <Navbar hide={(!scrollY || !ref.current) ? true : scrollY! < ref.current?.offsetHeight!} />
+                    <Navbar hide={(!scrollY || !ref) ? true : scrollY! < ref?.offsetHeight!} />
                 </div>
             </div>
         </header>
