@@ -18,7 +18,7 @@ const BlogPage = async () => {
                             <Posts posts={posts} />
                         </div>
                         <div className="w-full lg:max-w-56 lg:sticky top-32 h-full">
-                            <p>Hope you enjoy my blogs posts. Connect with me on social media using link below and let me know you thoughts.</p>
+                            <p>Hope you enjoy my blog posts. Connect with me on social media using link below and let me know you thoughts.</p>
                             <SocialLinks breakAt="lg" />
                         </div>
                     </div>
